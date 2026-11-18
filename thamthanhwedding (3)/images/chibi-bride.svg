@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="800" height="1040">
+  <defs>
+    <radialGradient id="skin" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#fff0e6"/><stop offset="1" stop-color="#f9d6c2"/>
+    </radialGradient>
+    <linearGradient id="gown" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#eef0f2"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="200" cy="502" rx="140" ry="13" fill="#000" opacity="0.08"/>
+
+  <!-- veil back -->
+  <path d="M270 140 Q350 250 340 470 Q300 490 250 470 Q300 330 250 200 Z" fill="#ffffff" opacity="0.55" stroke="#e8e8ee" stroke-width="2"/>
+
+  <!-- gown skirt -->
+  <path d="M160 360 Q100 430 66 494 Q200 512 334 494 Q300 430 240 360 Z" fill="url(#gown)" stroke="#e2e4e8" stroke-width="2"/>
+  <path d="M182 372 Q160 440 140 500" stroke="#e3e5ea" stroke-width="3" fill="none"/>
+  <path d="M200 372 L200 504" stroke="#e3e5ea" stroke-width="3" fill="none"/>
+  <path d="M218 372 Q240 440 260 500" stroke="#e3e5ea" stroke-width="3" fill="none"/>
+  <!-- bodice (strapless) -->
+  <path d="M158 310 Q180 300 200 306 Q220 300 242 310 L240 366 Q200 374 160 366 Z" fill="#fff" stroke="#e2e4e8" stroke-width="2"/>
+  <path d="M158 312 Q200 322 242 312" stroke="#e5e7eb" stroke-width="2" fill="none"/>
+  <!-- shoulders/chest skin -->
+  <path d="M150 312 Q160 290 188 286 L212 286 Q240 290 250 312 Q200 302 150 312 Z" fill="url(#skin)"/>
+  <!-- necklace -->
+  <path d="M178 290 Q200 312 222 290" stroke="#d8dbe3" stroke-width="3" fill="none"/>
+  <circle cx="200" cy="302" r="3.5" fill="#f2f4f8" stroke="#c9ccd6"/>
+
+  <!-- arms -->
+  <path d="M152 312 Q132 350 168 392" stroke="#f7d3bf" stroke-width="22" stroke-linecap="round" fill="none"/>
+  <path d="M248 312 Q268 350 232 392" stroke="#f7d3bf" stroke-width="22" stroke-linecap="round" fill="none"/>
+
+  <!-- bouquet -->
+  <path d="M190 404 L178 462 M200 404 L200 466 M210 404 L222 462" stroke="#7a8c4a" stroke-width="4" stroke-linecap="round"/>
+  <path d="M186 430 L214 430" stroke="#f3efe2" stroke-width="10"/>
+  <g>
+    <path d="M170 388 Q150 370 158 360" stroke="#c9b37a" stroke-width="3" fill="none"/>
+    <path d="M232 386 Q252 368 246 356" stroke="#c9b37a" stroke-width="3" fill="none"/>
+    <circle cx="178" cy="384" r="15" fill="#fff" stroke="#e6e2d6" stroke-width="2"/>
+    <circle cx="222" cy="384" r="15" fill="#fff" stroke="#e6e2d6" stroke-width="2"/>
+    <circle cx="200" cy="372" r="17" fill="#fff" stroke="#e6e2d6" stroke-width="2"/>
+    <circle cx="200" cy="396" r="14" fill="#fff" stroke="#e6e2d6" stroke-width="2"/>
+    <circle cx="178" cy="384" r="4" fill="#f4d98a"/>
+    <circle cx="222" cy="384" r="4" fill="#f4d98a"/>
+    <circle cx="200" cy="372" r="5" fill="#f4d98a"/>
+    <circle cx="200" cy="396" r="4" fill="#f4d98a"/>
+    <!-- orchid trail -->
+    <circle cx="170" cy="414" r="8" fill="#fff" stroke="#e6e2d6"/>
+    <circle cx="164" cy="432" r="7" fill="#fff" stroke="#e6e2d6"/>
+    <circle cx="162" cy="448" r="6" fill="#fff" stroke="#e6e2d6"/>
+    <path d="M222 400 Q240 404 246 396" stroke="#9aae5a" stroke-width="3" fill="none"/>
+  </g>
+  <circle cx="168" cy="392" r="11" fill="#f9d6c2"/>
+  <circle cx="232" cy="392" r="11" fill="#f9d6c2"/>
+
+  <!-- neck -->
+  <rect x="189" y="270" width="22" height="22" fill="#f6cfb9"/>
+
+  <!-- hair back + bun -->
+  <ellipse cx="200" cy="180" rx="112" ry="104" fill="#1c1717"/>
+  <circle cx="290" cy="244" r="30" fill="#1c1717"/>
+  <!-- head -->
+  <ellipse cx="200" cy="192" rx="100" ry="96" fill="url(#skin)"/>
+  <!-- ears + pearl earrings -->
+  <ellipse cx="102" cy="206" rx="11" ry="16" fill="#f6cfb9"/>
+  <ellipse cx="298" cy="206" rx="11" ry="16" fill="#f6cfb9"/>
+  <circle cx="102" cy="226" r="5" fill="#fbfbfb" stroke="#d7d7df"/>
+  <circle cx="298" cy="226" r="5" fill="#fbfbfb" stroke="#d7d7df"/>
+  <!-- hair front: sleek, middle-ish part with soft side wisps -->
+  <path d="M96 196 Q92 110 160 86 Q200 76 240 86 Q308 110 304 196
+           Q292 140 248 118 Q214 106 200 104 Q170 112 150 124 Q108 150 96 196 Z" fill="#1c1717"/>
+  <path d="M100 190 Q96 222 104 246" stroke="#1c1717" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M300 190 Q304 222 296 246" stroke="#1c1717" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M160 96 Q200 82 246 96" stroke="#3a3232" stroke-width="4" fill="none" stroke-linecap="round"/>
+
+  <!-- veil top -->
+  <path d="M250 104 Q300 120 312 180 Q318 230 300 270" stroke="#ffffff" stroke-width="10" fill="none" opacity="0.85"/>
+  <path d="M250 104 Q300 120 312 180" stroke="#e6e6ee" stroke-width="2" fill="none"/>
+
+  <!-- brows -->
+  <path d="M138 166 Q156 158 176 164" stroke="#3a2a26" stroke-width="4" stroke-linecap="round" fill="none"/>
+  <path d="M224 164 Q244 158 262 166" stroke="#3a2a26" stroke-width="4" stroke-linecap="round" fill="none"/>
+
+  <!-- happy closed-ish eyes with lashes (smiling) -->
+  <ellipse cx="158" cy="200" rx="14" ry="16" fill="#2a1d18"/>
+  <ellipse cx="242" cy="200" rx="14" ry="16" fill="#2a1d18"/>
+  <circle cx="163" cy="193" r="5.5" fill="#fff"/>
+  <circle cx="247" cy="193" r="5.5" fill="#fff"/>
+  <circle cx="153" cy="207" r="2.4" fill="#fff"/>
+  <circle cx="237" cy="207" r="2.4" fill="#fff"/>
+  <path d="M142 190 Q156 180 174 186" stroke="#1a1210" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M226 186 Q244 180 258 190" stroke="#1a1210" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <path d="M142 190 L136 185 M258 190 L264 185" stroke="#1a1210" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- blush -->
+  <ellipse cx="138" cy="236" rx="18" ry="9" fill="#ff8f9c" opacity="0.5"/>
+  <ellipse cx="262" cy="236" rx="18" ry="9" fill="#ff8f9c" opacity="0.5"/>
+
+  <!-- big smile -->
+  <path d="M176 238 Q200 270 224 238 Q200 248 176 238 Z" fill="#b9474f"/>
+  <path d="M181 240 Q200 248 219 240 L217 245 Q200 252 183 245 Z" fill="#fff"/>
+  <path d="M198 218 Q200 222 202 218" stroke="#e0a48c" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

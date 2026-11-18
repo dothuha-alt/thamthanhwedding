@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" width="800" height="1040">
+  <defs>
+    <linearGradient id="uni" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2f5a3a"/><stop offset="1" stop-color="#1f4029"/>
+    </linearGradient>
+    <radialGradient id="skin" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#ffe3cf"/><stop offset="1" stop-color="#f7cdb1"/>
+    </radialGradient>
+  </defs>
+
+  <!-- shadow -->
+  <ellipse cx="200" cy="500" rx="95" ry="12" fill="#000" opacity="0.08"/>
+
+  <!-- legs -->
+  <rect x="160" y="420" width="34" height="68" rx="10" fill="url(#uni)"/>
+  <rect x="206" y="420" width="34" height="68" rx="10" fill="url(#uni)"/>
+  <ellipse cx="175" cy="490" rx="24" ry="11" fill="#1b1b1b"/>
+  <ellipse cx="225" cy="490" rx="24" ry="11" fill="#1b1b1b"/>
+
+  <!-- arms -->
+  <path d="M128 318 Q108 360 116 410" stroke="url(#uni)" stroke-width="32" stroke-linecap="round" fill="none"/>
+  <path d="M272 318 Q292 360 284 410" stroke="url(#uni)" stroke-width="32" stroke-linecap="round" fill="none"/>
+  <!-- cuff stripes -->
+  <path d="M101 396 L131 400" stroke="#d9a520" stroke-width="5"/>
+  <path d="M269 400 L299 396" stroke="#d9a520" stroke-width="5"/>
+  <circle cx="116" cy="418" r="14" fill="url(#skin)"/>
+  <circle cx="284" cy="418" r="14" fill="url(#skin)"/>
+
+  <!-- body jacket -->
+  <path d="M130 312 Q200 290 270 312 L262 430 Q200 440 138 430 Z" fill="url(#uni)"/>
+  <!-- shirt + tie -->
+  <path d="M182 300 L200 340 L218 300 Z" fill="#fff"/>
+  <path d="M196 306 L204 306 L207 338 L200 348 L193 338 Z" fill="#1e3a26"/>
+  <!-- lapels -->
+  <path d="M180 300 L200 348 L170 330 Z" fill="#284d32"/>
+  <path d="M220 300 L200 348 L230 330 Z" fill="#284d32"/>
+  <!-- red collar tabs -->
+  <path d="M168 312 L182 304 L186 318 Z" fill="#c8202b"/>
+  <path d="M232 312 L218 304 L214 318 Z" fill="#c8202b"/>
+  <!-- buttons -->
+  <circle cx="200" cy="362" r="4.5" fill="#e3b33a"/>
+  <circle cx="200" cy="386" r="4.5" fill="#e3b33a"/>
+  <circle cx="200" cy="410" r="4.5" fill="#e3b33a"/>
+  <!-- pockets -->
+  <rect x="150" y="340" width="30" height="8" rx="2" fill="#1d3b25"/>
+  <rect x="220" y="340" width="30" height="8" rx="2" fill="#1d3b25"/>
+  <circle cx="165" cy="352" r="3" fill="#e3b33a"/>
+  <circle cx="235" cy="352" r="3" fill="#e3b33a"/>
+  <!-- name tag -->
+  <rect x="222" y="326" width="26" height="8" rx="1.5" fill="#fff" stroke="#333" stroke-width="0.8"/>
+  <!-- epaulette + aiguillette (viewer left) -->
+  <path d="M128 312 Q148 302 168 306 L166 316 Q146 314 132 324 Z" fill="#e3b33a"/>
+  <path d="M138 318 Q150 360 186 352" stroke="#f0c03a" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="5 2"/>
+  <path d="M134 322 Q142 376 182 366" stroke="#f0c03a" stroke-width="7" fill="none" stroke-linecap="round" stroke-dasharray="5 2"/>
+  <path d="M183 352 L186 386" stroke="#e3b33a" stroke-width="3"/>
+  <path d="M186 386 L184 396 L188 396 Z" fill="#c99a20"/>
+
+  <!-- neck -->
+  <rect x="188" y="282" width="24" height="22" fill="#f4c6a8"/>
+
+  <!-- head -->
+  <ellipse cx="200" cy="190" rx="108" ry="102" fill="url(#skin)"/>
+  <!-- ears -->
+  <ellipse cx="94" cy="200" rx="14" ry="20" fill="#f6c9ab"/>
+  <ellipse cx="306" cy="200" rx="14" ry="20" fill="#f6c9ab"/>
+
+  <!-- hair (side part, volume on top) -->
+  <path d="M90 196 Q80 110 140 82 Q200 56 262 80 Q318 104 310 196
+           Q300 150 280 138 Q240 126 210 112 Q180 140 130 140 Q100 150 90 196 Z" fill="#1d1a1a"/>
+  <path d="M150 96 Q210 70 272 98" stroke="#3b3535" stroke-width="5" fill="none" stroke-linecap="round"/>
+  <path d="M210 112 Q230 100 262 112" stroke="#3b3535" stroke-width="3" fill="none" stroke-linecap="round"/>
+
+  <!-- brows -->
+  <path d="M138 168 Q158 160 178 166" stroke="#1d1a1a" stroke-width="6" stroke-linecap="round" fill="none"/>
+  <path d="M222 166 Q242 160 262 168" stroke="#1d1a1a" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <!-- eyes -->
+  <ellipse cx="158" cy="200" rx="13" ry="15" fill="#2a1d18"/>
+  <ellipse cx="242" cy="200" rx="13" ry="15" fill="#2a1d18"/>
+  <circle cx="163" cy="194" r="5" fill="#fff"/>
+  <circle cx="247" cy="194" r="5" fill="#fff"/>
+  <circle cx="154" cy="206" r="2.2" fill="#fff"/>
+  <circle cx="238" cy="206" r="2.2" fill="#fff"/>
+
+  <!-- glasses (black square frames) -->
+  <rect x="124" y="176" width="68" height="52" rx="12" fill="none" stroke="#111" stroke-width="6"/>
+  <rect x="208" y="176" width="68" height="52" rx="12" fill="none" stroke="#111" stroke-width="6"/>
+  <path d="M192 196 Q200 190 208 196" stroke="#111" stroke-width="5" fill="none"/>
+  <path d="M124 190 L98 186" stroke="#111" stroke-width="5"/>
+  <path d="M276 190 L302 186" stroke="#111" stroke-width="5"/>
+  <path d="M132 182 L148 182" stroke="#fff" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+  <path d="M216 182 L232 182" stroke="#fff" stroke-width="3" opacity="0.6" stroke-linecap="round"/>
+
+  <!-- blush -->
+  <ellipse cx="140" cy="242" rx="16" ry="8" fill="#ff9a9a" opacity="0.45"/>
+  <ellipse cx="260" cy="242" rx="16" ry="8" fill="#ff9a9a" opacity="0.45"/>
+
+  <!-- smile -->
+  <path d="M176 246 Q200 274 224 246 Q200 256 176 246 Z" fill="#7a2f2f"/>
+  <path d="M182 248 Q200 256 218 248 L216 252 Q200 258 184 252 Z" fill="#fff"/>
+  <path d="M197 222 Q200 228 203 222" stroke="#d99a80" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

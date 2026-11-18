@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thiệp Cưới Thắm &amp; Thành</title>
+<meta name="description" content="Trân trọng kính mời bạn đến dự lễ cưới của chúng mình">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thamthanhwedding.vercel.app/">
+<meta property="og:title" content="Thiệp cưới Thắm &amp; Thành – 28.11.2026">
+<meta property="og:description" content="Trân trọng kính mời bạn đến dự lễ cưới của chúng mình">
+<meta property="og:image" content="https://thamthanhwedding.vercel.app/images/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://thamthanhwedding.vercel.app/images/og.jpg">
+<meta name="theme-color" content="#a61b29">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9D%A4%EF%B8%8F%3C/text%3E%3C/svg%3E">
+<link rel="preload" as="image" href="images/cover.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Playfair+Display:ital,wght@0,500;0,700;1,500&family=Be+Vietnam+Pro:wght@300;400;500;600&family=Baloo+2:wght@600;700&family=Itim&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#a61b29; --red-d:#7d1420; --gold:#c9a25a; --gold-l:#e8d3a2;
+    --cream:#fbf6ee; --paper:#fffdf8; --ink:#3d2b26; --muted:#7c6a62;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#efe6d8}
+  body{font-family:"Be Vietnam Pro",system-ui,sans-serif;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:480px;margin:0 auto;background:var(--cream);min-height:100vh;overflow:hidden;position:relative;box-shadow:0 0 40px rgba(0,0,0,.08)}
+  .script{font-family:"Dancing Script",cursive}
+  .serif{font-family:"Playfair Display",serif}
+  section{padding:56px 28px;position:relative;text-align:center}
+  h2.title{font-family:"Dancing Script",cursive;font-size:42px;color:var(--red);font-weight:700;line-height:1.2}
+  .sub{color:var(--muted);font-size:13px;letter-spacing:.04em}
+  .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:14px auto 28px;color:var(--gold)}
+  .divider::before,.divider::after{content:"";height:1px;width:60px;background:linear-gradient(90deg,transparent,var(--gold))}
+  .divider::after{background:linear-gradient(-90deg,transparent,var(--gold))}
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .9s ease,transform .9s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* ---------- Cover ---------- */
+  #cover{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;overflow:hidden;background:#fbf1c9;transition:opacity 1s ease .35s, visibility 1s .35s}
+  #cover.gone{opacity:0;visibility:hidden}
+  .cover-bg{position:absolute;inset:0;background:#f0e8d9 url("images/bg-cream.webp") repeat;background-size:480px}
+  .cover-art{position:relative;width:min(100vw, calc(100vh * 1024 / 572));aspect-ratio:1024/572;overflow:hidden;
+    box-shadow:0 18px 50px rgba(120,80,30,.25);animation:artIn 1.6s cubic-bezier(.2,.7,.2,1) both;transition:transform 1.2s cubic-bezier(.3,.6,.2,1)}
+  .cover-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+  @keyframes artIn{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+  #cover.gone .cover-art{transform:scale(1.12)}
+  /* Portrait phones: crop to the couple + text in the centre */
+  @media (max-aspect-ratio:1/1){
+    .cover-art{width:min(100vw, calc(82vh * 470 / 572));aspect-ratio:470/572;border-radius:22px}
+  }
+  .tap-text{position:absolute;left:0;right:0;top:29.9%;text-align:center;white-space:nowrap;pointer-events:none;line-height:1.1;
+    font-family:"Baloo 2","Be Vietnam Pro",sans-serif;font-weight:700;font-size:var(--fs,16px);color:#5a3418;letter-spacing:.01em}
+  .tap-out{display:none;position:relative;z-index:1;margin-top:22px;font-size:19px;top:auto;left:auto;right:auto;
+    padding:8px 20px;border-radius:40px;background:rgba(255,250,228,.78);box-shadow:0 6px 18px rgba(120,80,30,.18)}
+  .tap-text .bob{display:inline-block;animation:bob2 1.6s ease-in-out infinite alternate}
+  @keyframes bob2{from{transform:translateY(.12em)}to{transform:translateY(-.22em)}}
+  .tap-text .ch{display:inline-block;opacity:0;transform:translateY(.5em) scale(.6);
+    animation:chIn .6s cubic-bezier(.3,1.6,.5,1) forwards, chWave 2.6s ease-in-out infinite, chGlow 2.6s ease-in-out infinite;
+    text-shadow:0 0 0 rgba(255,215,120,0)}
+  .tap-text .sp{display:inline-block;width:.28em}
+  @keyframes chIn{to{opacity:1;transform:none}}
+  @keyframes chWave{0%,55%,100%{translate:0 0}22%{translate:0 -.32em}38%{translate:0 .03em}}
+  @keyframes chGlow{0%,55%,100%{color:#5a3418;text-shadow:0 0 0 rgba(255,200,90,0)}22%{color:#b5452e;text-shadow:0 0 .3em rgba(255,215,120,.9)}}
+  .tap-hand{display:none;position:absolute;left:50%;bottom:max(5vh,calc((100vh - 82vh) / 2 - 64px));width:46px;height:46px;margin-left:-23px;pointer-events:none;
+    opacity:0;animation:fadeUp .8s ease 2.4s forwards}
+  .tap-hand .dot{position:absolute;inset:30%;border-radius:50%;background:radial-gradient(circle,#fff 0,#ffd98a 60%,#f3b54a 100%);box-shadow:0 0 12px rgba(255,190,80,.9);animation:beat 1.4s ease-in-out infinite}
+  .tap-hand .ring{position:absolute;inset:0;border-radius:50%;border:2px solid rgba(240,170,60,.9);animation:ripple 1.8s ease-out infinite}
+  .tap-hand .ring.r2{animation-delay:.6s}.tap-hand .ring.r3{animation-delay:1.2s}
+  @keyframes ripple{from{transform:scale(.35);opacity:1}to{transform:scale(1.9);opacity:0}}
+  @keyframes beat{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+  .sparkle{position:absolute;pointer-events:none;width:10px;height:10px;opacity:0;animation:twinkle 2.2s ease-in-out infinite}
+  .sparkle::before,.sparkle::after{content:"";position:absolute;inset:0;background:#fff3c4;clip-path:polygon(50% 0,62% 38%,100% 50%,62% 62%,50% 100%,38% 62%,0 50%,38% 38%);filter:drop-shadow(0 0 3px #ffd36b)}
+  @keyframes twinkle{0%,100%{opacity:0;transform:scale(.3) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
+  .burst{position:fixed;z-index:58;pointer-events:none;font-size:18px;line-height:1;will-change:transform,opacity}
+
+  /* ---------- Hero (page 2) ---------- */
+  .hero{background:#fff;padding:64px 24px 56px}
+  .hero .lead{font-family:"Baloo 2",sans-serif;font-weight:600;font-size:17px;color:#7a655c;letter-spacing:.06em}
+  .hero .names{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:44px;color:#5a3214;line-height:1.15;margin:6px 0 2px;letter-spacing:.04em}
+  .hero .hdate{font-family:"Baloo 2",sans-serif;font-weight:600;font-size:17px;color:#7a655c;letter-spacing:.08em}
+  .doves{display:block;width:72%;max-width:300px;height:auto;margin:18px auto 8px;animation:float 4s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+  .countdown{display:flex;justify-content:center;gap:12px;margin:6px 0 0}
+  .cd{width:68px;padding:10px 0 8px;background:#fff;border:2px solid #4a2a1c;border-radius:12px}
+  .cd b{display:block;font-family:"Itim","Baloo 2",cursive;font-weight:400;font-size:32px;color:#5a3214;line-height:1.15}
+  .cd span{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:12px;color:#6b5b55;text-transform:uppercase;letter-spacing:.1em}
+  .hero-photo{width:86%;margin:34px auto 0;border-radius:18px;overflow:hidden;border:2px solid #4a2a1c;box-shadow:0 14px 30px rgba(74,42,28,.14);aspect-ratio:2/3}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+  /* ---------- Families ---------- */
+  .families{background:var(--paper)}
+  .fam-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:6px;align-items:start;margin-top:4px}
+  .fam h3{font-family:"Playfair Display",serif;color:var(--red);font-size:17px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px}
+  .fam p{font-size:13.5px}
+  .fam .addr{color:var(--muted);font-size:12.5px;margin-top:8px;line-height:1.5}
+  .fam-amp{font-family:"Dancing Script",cursive;font-size:40px;color:var(--gold);padding-top:22px}
+  .chibis{display:flex;justify-content:center;align-items:flex-end;margin:30px 0 4px}
+  .chibis img{width:46%;max-width:190px;filter:drop-shadow(0 8px 12px rgba(61,43,38,.15))}
+  .chibis img.g{animation:bob 3s ease-in-out infinite}
+  .chibis img.b{animation:bob 3s ease-in-out infinite .6s}
+  @keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
+  .couple-full{font-family:"Dancing Script",cursive;font-size:38px;color:var(--red);line-height:1.25;margin-top:10px}
+  .couple-full .amp{color:var(--gold);display:block;font-size:30px}
+  .party-note{margin-top:22px;padding:16px 18px;border:1px dashed var(--gold);border-radius:14px;background:var(--cream);font-size:13.5px}
+  .party-note b{color:var(--red);font-weight:600}
+
+  /* ---------- Events (flip cards) ---------- */
+  .events{background:linear-gradient(180deg,var(--cream),#f6ece0)}
+  .hint{font-size:12.5px;color:var(--muted);font-style:italic;margin-top:-16px;margin-bottom:22px}
+  .flip{perspective:1200px;margin:0 auto 18px;width:100%;max-width:380px;height:220px;cursor:pointer}
+  .flip-inner{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+  .flip.on .flip-inner{transform:rotateY(180deg)}
+  .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:18px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:22px}
+  .front{background:var(--red);color:#fff;box-shadow:0 12px 26px rgba(125,20,32,.25)}
+  .front::before{content:"";position:absolute;inset:9px;border:1px solid var(--gold-l);border-radius:12px}
+  .front .ico{font-size:34px;margin-bottom:6px}
+  .front h4{font-family:"Dancing Script",cursive;font-size:38px;font-weight:700;color:#fff}
+  .front .tapme{font-size:12px;color:var(--gold-l);margin-top:6px;letter-spacing:.06em}
+  .back{background:var(--paper);transform:rotateY(180deg);border:1.5px solid var(--gold);box-shadow:0 12px 26px rgba(61,43,38,.12)}
+  .back h5{font-family:"Playfair Display",serif;color:var(--red);font-size:16px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+  .back p{font-size:14px}
+  .back .time{font-family:"Playfair Display",serif;font-size:30px;color:var(--ink);line-height:1.2}
+  .back .lunar{color:var(--muted);font-size:13px;font-style:italic;margin-top:4px}
+  .map{display:inline-block;margin-top:12px;font-size:12.5px;color:#fff;background:var(--red);padding:7px 16px;border-radius:30px;text-decoration:none}
+
+  /* ---------- Album ---------- */
+  .album{background:var(--paper)}
+  .gallery{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .gallery img{width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:14px;cursor:zoom-in;box-shadow:0 8px 18px rgba(61,43,38,.14)}
+  .lightbox{position:fixed;inset:0;background:rgba(20,10,10,.9);display:none;align-items:center;justify-content:center;z-index:60;padding:20px}
+  .lightbox.on{display:flex}
+  .lightbox img{max-width:100%;max-height:92vh;border-radius:10px}
+  .lightbox button{position:absolute;top:14px;right:16px;background:none;border:0;color:#fff;font-size:34px;cursor:pointer}
+
+  /* ---------- RSVP ---------- */
+  .rsvp{background:linear-gradient(180deg,#f6ece0,var(--cream))}
+  .form{background:var(--paper);border-radius:18px;padding:24px 20px;text-align:left;box-shadow:0 10px 24px rgba(61,43,38,.08);border:1px solid var(--gold-l)}
+  .form label.q{display:block;font-weight:600;font-size:14px;margin:14px 0 8px;color:var(--ink)}
+  .form label.q:first-child{margin-top:0}
+  .form input[type=text],.form textarea{width:100%;border:1px solid #e3d6c3;border-radius:10px;padding:11px 12px;font:inherit;font-size:14px;background:#fff;color:var(--ink)}
+  .form textarea{resize:none;height:84px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{border:1px solid #e3d6c3;background:#fff;border-radius:30px;padding:8px 14px;font-size:13px;cursor:pointer;user-select:none;transition:.2s}
+  .chip.sel{background:var(--red);border-color:var(--red);color:#fff}
+  .count{text-align:right;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .btn{display:block;width:100%;margin-top:18px;background:var(--red);color:#fff;border:0;border-radius:30px;padding:13px;font:inherit;font-weight:600;font-size:15px;cursor:pointer;box-shadow:0 8px 18px rgba(166,27,41,.25)}
+  .btn:active{transform:scale(.98)}
+  .err{color:var(--red);font-size:12.5px;margin-top:8px;min-height:1em}
+  .result{display:none;margin-top:16px;padding:16px;border-radius:14px;background:var(--cream);border:1px dashed var(--gold);font-size:13.5px}
+  .result pre{white-space:pre-wrap;font-family:inherit;background:#fff;border-radius:10px;padding:10px 12px;margin:10px 0;font-size:13px;border:1px solid #eee2d0}
+  .btn.ghost{background:#fff;color:var(--red);border:1.5px solid var(--red);box-shadow:none;margin-top:10px;padding:10px}
+
+  /* ---------- Gift ---------- */
+  .gift{background:var(--paper)}
+  .giftbox{width:150px;height:150px;margin:46px auto 0;position:relative;cursor:pointer}
+  .giftbox .box{position:absolute;bottom:0;left:15px;width:120px;height:90px;background:var(--red);border-radius:6px}
+  .giftbox .lid{position:absolute;top:28px;left:5px;width:140px;height:32px;background:var(--red-d);border-radius:6px;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-origin:left bottom}
+  .giftbox .ribv{position:absolute;bottom:0;left:66px;width:18px;height:122px;background:var(--gold)}
+  .giftbox .bow{position:absolute;top:4px;left:50px;width:50px;height:30px;transition:transform .7s cubic-bezier(.3,1.4,.5,1);transform-origin:left bottom}
+  .giftbox .bow::before,.giftbox .bow::after{content:"";position:absolute;top:4px;width:24px;height:22px;border:5px solid var(--gold);border-radius:50% 50% 0 50%}
+  .giftbox .bow::before{left:0;transform:rotate(-20deg)}
+  .giftbox .bow::after{right:0;transform:rotate(20deg) scaleX(-1)}
+  .giftbox.open .lid,.giftbox.open .bow{transform:translate(-34px,-12px) rotate(-28deg)}
+  .giftbox:not(.open){animation:wiggle 2.4s ease-in-out infinite}
+  @keyframes wiggle{0%,80%,100%{transform:rotate(0)}85%{transform:rotate(-4deg)}90%{transform:rotate(4deg)}95%{transform:rotate(-2deg)}}
+  .gift-panel{max-height:0;overflow:hidden;transition:max-height .8s ease}
+  .gift-panel.on{max-height:700px}
+  .gift-cards{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:22px}
+  .gcard{background:var(--cream);border:1px solid var(--gold-l);border-radius:16px;padding:14px 10px}
+  .gcard h6{font-family:"Playfair Display",serif;font-size:14px;color:var(--red);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px}
+  .qr{aspect-ratio:1;border:2px dashed var(--gold);border-radius:12px;display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:12px;padding:8px;background:#fff}
+  .gcard p{font-size:12.5px;margin-top:8px;color:var(--muted)}
+
+  /* ---------- Closing ---------- */
+  .closing{background:var(--red);color:#fff;padding:64px 28px 72px}
+  .closing .thanks{font-family:"Dancing Script",cursive;font-size:44px;color:#fff;line-height:1.1}
+  .closing p{color:#ffe7d8;font-size:14.5px;margin-top:14px}
+  .closing .sign{font-family:"Dancing Script",cursive;font-size:34px;color:var(--gold-l);margin-top:18px}
+  .closing img{width:120px;margin-top:20px}
+
+  /* ---------- Falling leaves ---------- */
+  #leaves{position:fixed;inset:0;pointer-events:none;z-index:55;overflow:hidden;transition:opacity .4s}
+  .leaf{position:absolute;top:-60px;will-change:transform;animation:fall linear infinite}
+  .leaf svg{display:block;width:100%;height:100%;animation:sway ease-in-out infinite alternate}
+  @keyframes fall{from{transform:translate3d(0,-60px,0)}to{transform:translate3d(var(--drift),110vh,0)}}
+  @keyframes sway{from{transform:rotate(-35deg) translateX(-14px)}to{transform:rotate(35deg) translateX(14px)}}
+  /* ---------- Textured page backgrounds: odd = cream paper, even = red fabric ---------- */
+  section.bg-cream{background:#f0e8d9 url("images/bg-cream.webp") repeat;background-size:480px}
+  section.bg-red{background:#8c2b3a url("images/bg-red.webp") repeat;background-size:480px;color:#fbeee0}
+  .bg-red h2.title{color:#fff3e2}
+  .bg-red .hint,.bg-red .sub{color:#f2d6c4}
+  .hero.bg-red .lead,.hero.bg-red .hdate{color:#f1d9bd}
+  .hero.bg-red .names{color:#fff7ea}
+  .bg-red .cd{background:#fbf4e8;border-color:#e8d3a2;box-shadow:0 6px 14px rgba(0,0,0,.18)}
+  .bg-red .hero-photo{border-color:#e8d3a2;box-shadow:0 16px 34px rgba(0,0,0,.28)}
+  .bg-red .front{background:#f0e8d9 url("images/bg-cream.webp") repeat;background-size:480px;color:var(--red);box-shadow:0 12px 26px rgba(0,0,0,.25)}
+  .bg-red .front::before{border-color:var(--gold)}
+  .bg-red .front h4{color:var(--red)}
+  .bg-red .front .tapme{color:#8a6f5f}
+  .bg-red .back{box-shadow:0 12px 26px rgba(0,0,0,.25)}
+  .bg-red .form{box-shadow:0 12px 28px rgba(0,0,0,.25);color:var(--ink)}
+  .bg-red .back{color:var(--ink)}
+  .bg-cream .gcard{background:#fbf6ee}
+  /* ---------- Equal-height pages: every page = one screen ---------- */
+  .wrap>section{height:100vh;height:100svh;min-height:600px;display:flex;flex-direction:column;justify-content:center;align-items:stretch;
+    padding:28px 22px;overflow:hidden}
+  .wrap>section>*{flex-shrink:0}
+  h2.title{font-size:38px}
+  .divider{margin:8px auto 16px}
+  /* page 2 */
+  .hero.bg-red{padding:26px 22px 24px}
+  .hero .names{font-size:clamp(34px,10.5vw,44px)}
+  .doves{width:auto;height:clamp(80px,14svh,140px);margin:10px auto 6px}
+  .wrap .hero-photo{flex:1 1 0;min-height:0;width:100%;margin:18px 0 0;aspect-ratio:auto;border:0;box-shadow:none;border-radius:0;overflow:visible;position:relative}
+  .wrap .hero-photo img{position:absolute;top:0;left:50%;transform:translateX(-50%);height:100%;width:auto;max-width:100%;aspect-ratio:2/3;object-fit:cover;border-radius:18px;border:2px solid #e8d3a2;box-shadow:0 16px 34px rgba(0,0,0,.28)}
+  /* page 3 */
+  .chibis{margin:14px 0 0;height:clamp(140px,24svh,230px)}
+  .chibis img{height:100%;width:auto;max-width:46%}
+  .couple-full{font-size:clamp(28px,8.5vw,36px);margin-top:6px}
+  .couple-full .amp{font-size:24px}
+  .party-note{margin-top:14px;padding:12px 14px}
+  /* page 4 */
+  .events .hint{margin:-8px 0 14px}
+  .flip{height:clamp(120px,calc((100svh - 230px) / 3),200px);margin-bottom:12px}
+  .flip:last-child{margin-bottom:0}
+  .face{padding:12px 16px}
+  .front .ico{font-size:26px;margin-bottom:2px}
+  .front h4{font-size:32px;line-height:1.1}
+  .back h5{margin-bottom:4px}
+  .back .time{font-size:26px}
+  .back p{font-size:13.5px;line-height:1.45}
+  .map{margin-top:8px;padding:5px 14px}
+  /* page 5 */
+  .gallery img{aspect-ratio:auto;height:clamp(240px,52svh,440px)}
+  /* page 6 */
+  .form{padding:18px 18px}
+  .form label.q{margin:10px 0 6px}
+  .form textarea{height:62px}
+  .chip{padding:6px 12px}
+  .btn{margin-top:12px;padding:11px}
+  .result{position:absolute;left:22px;right:22px;bottom:22px;z-index:3;background:#fffaf2;box-shadow:0 10px 30px rgba(0,0,0,.25);margin:0}
+  .rsvp{position:relative}
+  /* page 7 */
+  .giftbox{margin:30px auto 0}
+  .gift-cards{margin-top:16px}
+  .qr{aspect-ratio:auto;height:clamp(100px,20svh,170px)}
+  /* ---------- Colour fixes after swap ---------- */
+  .hero.bg-cream .lead,.hero.bg-cream .hdate{color:#7a655c}
+  .hero.bg-cream .names{color:#5a3214}
+  .bg-cream .cd{background:#fffdf8;border-color:#4a2a1c}
+  .wrap .bg-cream .hero-photo img{border-color:#4a2a1c;box-shadow:0 14px 30px rgba(74,42,28,.18)}
+  .bg-red .fam h3{color:#f3d9a6}
+  .bg-red .fam .addr{color:#efd2c2}
+  .bg-red .fam-amp{color:#e8d3a2}
+  .bg-red .couple-full{color:#fff4e4}
+  .bg-red .couple-full .amp{color:#e8d3a2}
+  .bg-red .party-note{background:#fbf4e8;color:var(--ink);border-color:var(--gold)}
+  .bg-red .chibis img{filter:drop-shadow(0 8px 12px rgba(0,0,0,.25))}
+  .bg-red .gallery img{box-shadow:0 10px 24px rgba(0,0,0,.3)}
+  .bg-red .giftbox .box{background:#f3e6cf}
+  .bg-red .giftbox .lid{background:#e9d6b4}
+  .bg-red .giftbox .ribv{background:var(--red-d)}
+  .bg-red .giftbox .bow::before,.bg-red .giftbox .bow::after{border-color:#f3d9a6}
+  .bg-red .gcard{background:#fbf4e8;color:var(--ink)}
+  .closing.bg-cream{color:var(--ink)}
+  .closing.bg-cream .thanks{color:var(--red)}
+  .closing.bg-cream p{color:var(--ink)}
+  .closing.bg-cream .sign{color:#b0843a}
+  .bg-cream .doves{filter:drop-shadow(0 1px 1px rgba(120,80,50,.35)) drop-shadow(0 6px 10px rgba(120,80,50,.22)) saturate(1.15) brightness(.97)}
+  /* ---------- Gift + Thank you on one page ---------- */
+  .gift{position:relative}
+  .wrap .gift .giftbox{margin:18px auto 0;transform:scale(.85)}
+  .thanks-block{margin-top:clamp(14px,4svh,40px);padding-top:clamp(14px,3svh,28px);border-top:1px dashed rgba(232,211,162,.6)}
+  .thanks-block .thanks{font-family:"Dancing Script",cursive;font-size:42px;color:#fff4e4;line-height:1.1}
+  .thanks-block p{color:#f6dccb;font-size:14px;margin-top:8px}
+  .thanks-block .sign{font-family:"Dancing Script",cursive;font-size:32px;color:#e8d3a2;margin-top:6px}
+  .chibi-row{display:flex;justify-content:center;gap:4px;margin-top:8px;height:clamp(80px,15svh,140px)}
+  .chibi-row img{height:100%;width:auto;filter:drop-shadow(0 6px 10px rgba(0,0,0,.25))}
+  .gift-pop{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;padding:20px;
+    background:rgba(60,12,20,.55);opacity:0;visibility:hidden;transition:opacity .45s ease,visibility .45s}
+  .gift-pop.on{opacity:1;visibility:visible}
+  .gift-pop-card{position:relative;width:100%;max-width:400px;background:#f0e8d9 url("images/bg-cream.webp") repeat;background-size:480px;border-radius:20px;padding:22px 16px 18px;
+    box-shadow:0 20px 50px rgba(0,0,0,.35);transform:translateY(24px) scale(.96);transition:transform .5s cubic-bezier(.3,1.3,.5,1);color:var(--ink)}
+  .gift-pop.on .gift-pop-card{transform:none}
+  .pop-title{font-family:"Dancing Script",cursive;font-size:30px;color:var(--red);font-weight:700}
+  .gift-pop .gift-cards{margin-top:12px}
+  .gift-pop .gcard{background:#fffaf2}
+  .gift-pop .qr{height:auto;aspect-ratio:1}
+  .gift-close{position:absolute;top:8px;right:12px;background:none;border:0;font-size:30px;line-height:1;color:var(--red);cursor:pointer}
+  /* ---------- Album: one frame, swipe + zoom ---------- */
+  .wrap .album-frame{position:relative;flex:1 1 0;min-height:0;width:100%;max-width:420px;margin:0 auto;border-radius:20px;overflow:hidden;
+    border:3px solid #e8d3a2;box-shadow:0 16px 36px rgba(0,0,0,.3);background:#2b0d12}
+  .slides{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .slides::-webkit-scrollbar{display:none}
+  .slide{flex:0 0 100%;height:100%;scroll-snap-align:center;scroll-snap-stop:always}
+  .slide img{width:100%;height:100%;object-fit:cover;display:block;cursor:zoom-in}
+  .album-frame .nav{position:absolute;top:50%;transform:translateY(-50%);width:38px;height:38px;border-radius:50%;border:0;
+    background:rgba(255,250,240,.82);color:var(--red);font-size:26px;line-height:1;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.2);display:flex;align-items:center;justify-content:center;padding-bottom:3px}
+  .album-frame .prev{left:10px}.album-frame .next{right:10px}
+  .album-frame .zoom{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:0;background:var(--red);color:#fff;
+    font-size:28px;font-weight:300;line-height:1;cursor:pointer;box-shadow:0 4px 14px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;padding-bottom:2px}
+  .count-badge{position:absolute;left:12px;top:12px;background:rgba(0,0,0,.45);color:#fff;font-size:12px;padding:3px 10px;border-radius:20px}
+  .dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
+  .dots button{width:8px;height:8px;border-radius:50%;border:0;padding:0;background:rgba(255,240,220,.45);cursor:pointer;transition:.3s}
+  .dots button.on{width:22px;border-radius:6px;background:#e8d3a2}
+  .album-hint{margin-top:6px;font-size:12px}
+  .lightbox img{max-height:86vh}
+  .lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.15);border:0;color:#fff;font-size:34px;width:46px;height:46px;border-radius:50%;cursor:pointer;line-height:1}
+  .lightbox .lb-nav{top:50%;right:auto;font-size:34px;background:rgba(0,0,0,.35);width:44px;height:44px;border-radius:50%;padding-bottom:4px}
+  .lightbox .lb-prev{left:10px}.lightbox .lb-next{left:auto;right:10px}
+  .lightbox .lb-close{position:absolute;top:14px;right:16px;background:none;border:0;color:#fff;font-size:36px;cursor:pointer}
+  /* ---------- Page: hỷ on countdown page ---------- */
+  .hy-mark{display:block;height:clamp(100px,17svh,170px);width:auto;margin:16px auto 14px;image-rendering:auto}
+  .hy-mark{transform-origin:50% 85%;animation:hyWiggle 2.6s ease-in-out infinite;will-change:transform}
+  @keyframes hyWiggle{0%,100%{transform:rotate(0) scale(1)}10%{transform:rotate(-5deg) scale(1.03)}20%{transform:rotate(4deg) scale(1.03)}30%{transform:rotate(-3deg)}40%{transform:rotate(2deg)}50%{transform:rotate(0) scale(1)}}
+  /* ---------- Page: families (new layout) ---------- */
+  .families{text-align:center;font-family:"Baloo 2","Be Vietnam Pro",sans-serif}
+  .wrap .fam-doves{height:clamp(70px,12svh,120px);margin:0 auto 6px}
+  .families .intro{font-weight:600;font-size:14px;line-height:1.5;color:#f1d9bd;letter-spacing:.02em}
+  .bigname{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:clamp(26px,7.6vw,32px);color:#fff4e4;letter-spacing:.04em;line-height:1.2;margin-top:clamp(8px,2svh,18px)}
+  .rings{display:block;height:clamp(30px,5.5svh,48px);width:auto;margin:clamp(4px,1svh,10px) auto 0}
+  .rings+.bigname{margin-top:clamp(4px,1svh,10px)}
+  .wrap .fam2{flex:1 1 0;min-height:0;display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:clamp(14px,3svh,28px)}
+  .fam2 .col{display:flex;flex-direction:column;align-items:center;min-height:0}
+  .fam2 h3{font-family:"Baloo 2",sans-serif;font-weight:700;font-size:17px;letter-spacing:.14em;text-transform:uppercase;color:#f3d9a6;margin-bottom:4px}
+  .fam2 p{font-size:13.5px;line-height:1.5;color:#fbeee0}
+  .fam2 p b{font-weight:700}
+  .fam2 .addr2{color:#f5b8a4;font-weight:600;font-size:12.5px;margin-top:2px}
+  .chibi-slot{flex:1 1 0;min-height:60px;width:100%;position:relative;margin-top:8px}
+  .chibi-slot img{position:absolute;bottom:0;left:50%;transform:translateX(-50%);height:100%;max-height:200px;width:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.25))}
+  .chibi-slot img.b{animation:bob2c 3s ease-in-out infinite}
+  .chibi-slot img.g{animation:bob2c 3s ease-in-out infinite .6s}
+  @keyframes bob2c{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-6px)}}
+  /* ---------- Families: balanced layout ---------- */
+  .families.bg-red{justify-content:center;padding-top:clamp(18px,3svh,36px);padding-bottom:clamp(18px,3svh,36px)}
+  .wrap .fam2{flex:0 0 auto;margin-top:clamp(16px,3.5svh,34px);align-items:start}
+  .fam2 .col{justify-content:flex-start}
+  .fam2 .ghost{display:none}
+  .fam2 .col:last-child h3{margin-bottom:4px}
+  .fam2 .col:last-child .addr2{min-height:0}
+  .fam2 .info{min-height:calc(13.5px*1.5*2 + 12.5px*1.5*2 + 4px);display:flex;flex-direction:column;justify-content:flex-start}
+  .chibi-slot{flex:0 0 auto;height:clamp(130px,24svh,250px);margin-top:clamp(8px,1.6svh,16px)}
+  .chibi-slot img{max-height:none}
+  .families .intro{margin-top:2px}
+  .bigname{margin-top:clamp(10px,2.2svh,22px)}
+  /* ---------- Families: rows aligned like mock ---------- */
+  .fam2 .ghost{display:block;visibility:hidden}
+  .fam2 .lbl{font-weight:400;opacity:.85}
+  .fam2 h3{margin-bottom:8px}
+  .fam2 .info{min-height:0}
+  .fam2 .info p{white-space:nowrap}
+  .fam2 .addr2{font-size:clamp(10px,2.75vw,12.5px);letter-spacing:0}
+  .families.bg-red{padding-left:12px;padding-right:12px}
+  .wrap .fam2{gap:4px}
+  /* ---------- Gift QR popup ---------- */
+  .qr-tabs{display:flex;justify-content:center;gap:8px;margin-top:10px}
+  .qr-tab{border:1.5px solid var(--red);background:#fff;color:var(--red);border-radius:30px;padding:6px 18px;font:600 14px "Be Vietnam Pro",sans-serif;cursor:pointer}
+  .qr-tab.on{background:var(--red);color:#fff}
+  .qr-view{position:relative;margin:12px auto 0;width:min(100%,280px);aspect-ratio:676/857}
+  .qr-img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .35s;filter:drop-shadow(0 6px 14px rgba(0,0,0,.15))}
+  .qr-img.on{opacity:1}
+  .acct{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:12px auto 0;max-width:300px;background:#fffaf2;border:1px dashed var(--gold);border-radius:12px;padding:8px 12px;text-align:left}
+  .acct-name{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+  .acct-no{font-size:16px;font-weight:600;color:var(--ink);letter-spacing:.04em}
+  .copy-acct{border:0;background:var(--red);color:#fff;border-radius:20px;padding:7px 12px;font:600 12.5px "Be Vietnam Pro",sans-serif;cursor:pointer;white-space:nowrap}
+  .gift-pop-card{padding:18px 16px 16px;max-height:calc(100% - 10px);overflow:auto}
+  /* ---------- Events: 2 illustrated flip cards ---------- */
+  .events .title{margin-bottom:2px}
+  .events .hint{margin:0 0 clamp(8px,2svh,18px)}
+  .eflip{width:min(100%,calc((100svh - 150px) / 2 * 1000 / 646));aspect-ratio:1000/646;margin:0 auto;perspective:1400px;cursor:pointer}
+  .eflip+.eflip{margin-top:clamp(10px,2.4svh,24px)}
+  .eflip-inner{position:relative;width:100%;height:100%;transition:transform .8s cubic-bezier(.3,.7,.3,1);transform-style:preserve-3d}
+  .eface{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden}
+  .eface img{width:100%;height:100%;display:block;filter:drop-shadow(0 8px 14px rgba(74,42,28,.18))}
+  .eback{transform:rotateY(180deg)}
+  .eflip:not(.on) .maplink{pointer-events:none}
+  .maplink{position:absolute;left:29%;top:55%;width:42%;height:35%;border-radius:14px;-webkit-tap-highlight-color:rgba(166,27,41,.15)}
+  @keyframes nudge{0%,82%,100%{transform:rotateY(0)}88%{transform:rotateY(14deg)}94%{transform:rotateY(-6deg)}}
+  /* ---------- RSVP form + wishes wall ---------- */
+  .rsvp.bg-cream{justify-content:flex-start;padding-top:clamp(18px,3.5svh,34px)}
+  .rsvp .title{margin-bottom:10px}
+  .rform{background:#fbf6ee;border:1.5px solid #4a2a1c;border-radius:16px;padding:12px 12px 14px;box-shadow:4px 5px 0 #4a2a1c;text-align:center}
+  .rq{font-weight:600;font-size:14px;color:#5a3214;margin-bottom:8px}
+  .rq::after{content:"";display:block;width:56px;height:6px;margin:3px auto 0;background:radial-gradient(circle at 50% -2px,transparent 5px,#d9a066 5.5px,#d9a066 6.5px,transparent 7px) 0 0/14px 6px repeat-x}
+  .rform input,.rform select,.rform textarea{width:100%;border:1.2px solid #4a2a1c;border-radius:12px;padding:8px 12px;font:inherit;font-size:14px;background:#fffdf8;color:var(--ink);margin-top:7px;resize:none}
+  .rform select{appearance:auto;padding:7px 8px}
+  .rrow{display:grid;grid-template-columns:1.4fr 1fr;gap:7px}
+  .rform .count{text-align:right;font-size:11px;color:#a07b6a;margin-top:2px}
+  .rform .err{color:var(--red);font-size:12px;min-height:0;margin:0}
+  .rbtn{display:block;width:100%;margin-top:6px;background:#f2c26b;color:#4a2a1c;border:1.5px solid #4a2a1c;border-radius:14px;padding:9px;font:600 14.5px "Be Vietnam Pro",sans-serif;cursor:pointer;box-shadow:3px 4px 0 #4a2a1c}
+  .rbtn:active{transform:translate(2px,2px);box-shadow:1px 2px 0 #4a2a1c}
+  .rbtn:disabled{opacity:.7}
+  .wall{flex:1 1 0;min-height:0;overflow-y:auto;margin-top:14px;padding:6px 4px 10px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;align-content:start;-webkit-overflow-scrolling:touch}
+  .wall-empty{grid-column:1/-1;text-align:center;color:#a07b6a;font-size:13px;margin-top:10px}
+  .note{position:relative;border:1.3px solid #4a2a1c;border-radius:6px 10px 8px 12px;padding:10px 10px 8px;box-shadow:3px 4px 0 #4a2a1c;transform:rotate(var(--rot,0deg));text-align:left;font-size:13px;line-height:1.4;color:#5a3a2c}
+  .note p{word-break:break-word;margin:0 0 6px}
+  .note .by{display:block;text-align:right;font-weight:600;font-size:12px;color:#7a4a32}
+  .note .deco{position:absolute;top:-9px;right:8px;font-size:14px;color:#d9576a}
+  .note.pop{animation:pop .5s cubic-bezier(.3,1.5,.5,1)}
+  @keyframes pop{from{transform:scale(.6) rotate(var(--rot,0deg));opacity:0}to{transform:rotate(var(--rot,0deg));opacity:1}}
+  /* ---------- tweaks: bigger hero photo, smaller hỷ, landscape album ---------- */
+  .hy-mark{height:clamp(64px,10.5svh,110px);margin:10px auto 10px}
+  .hero.bg-cream{padding-top:20px;padding-bottom:18px}
+  .wrap .hero-photo{margin-top:14px}
+  .slide.land{display:flex;align-items:center;background:#f0e8d9}
+  .slide.land img{height:auto;object-fit:contain}
+  .dots{flex-wrap:wrap;max-width:300px;margin-left:auto;margin-right:auto;gap:6px}
+  .dots button{width:6px;height:6px}
+  .dots button.on{width:16px}
+  /* ---------- Music button ---------- */
+  .music-btn{position:fixed;right:max(14px,calc(50vw - 240px + 14px));bottom:18px;z-index:57;width:52px;height:52px;border-radius:50%;border:0;cursor:pointer;
+    background:#c8862b;color:#fff;font:700 13px "Baloo 2","Be Vietnam Pro",sans-serif;box-shadow:0 6px 16px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;
+    opacity:0;pointer-events:none;transition:opacity .5s}
+  .music-btn.show{opacity:1;pointer-events:auto}
+  .music-btn::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1.5px dashed rgba(255,255,255,.6)}
+  .music-btn.playing{animation:spin 4s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  /* ---------- Cover: full screen ---------- */
+  #cover .cover-art,#cover .cover-art{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;border-radius:0;box-shadow:none}
+  #cover .tap-text{left:0;right:auto;top:0;transform:translate(-50%,-50%);font-size:var(--fs,16px);color:#6b3d1e}
+  #cover .tap-text .bob{animation:bob2 1.2s ease-in-out infinite alternate}
+  @keyframes bob2{from{transform:translateY(.15em)}to{transform:translateY(-.35em)}}
+  .maplink.addr-link{left:12%;top:72%;width:76%;height:17%;border-radius:10px}
+  /* old form + wall fit on one screen */
+  .rsvp.bg-cream{justify-content:flex-start;padding-top:clamp(16px,3svh,30px)}
+  .rsvp .divider{margin:4px auto 8px}
+  .rsvp .form{padding:14px 16px}
+  .rsvp .form label.q{margin:8px 0 5px}
+  .rsvp .form textarea{height:52px}
+  .rsvp .wall{margin-top:12px}
+  .wrap>section.rsvp{height:auto;min-height:100svh;overflow:visible}
+  .wrap .rsvp .wall{flex:1 0 auto;min-height:150px;max-height:340px}
+</style>
+</head>
+<body>
+<!-- Cover -->
+<div id="cover" role="button" aria-label="Chạm để mở thiệp">
+  <div class="cover-bg"></div>
+  <div class="cover-art" id="coverArt">
+    <img src="images/cover.webp" alt="Trân trọng kính mời quý khách đến chung vui cùng gia đình chúng em – Thắm &amp; Thành – 28.11.2026">
+    <div class="tap-text"><span class="bob">Chạm nhẹ để mở thiệp</span></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <!-- Hero -->
+  <section class="hero bg-cream">
+    <div class="lead reveal">Chúng mình sắp cưới</div>
+    <div class="names reveal">Thắm &amp; Thành</div>
+    <div class="hdate reveal">28.11.2026</div>
+    <img class="hy-mark reveal" src="images/hy.webp" alt="囍">
+    <div class="countdown reveal" id="countdown">
+      <div class="cd"><b id="cd-d">00</b><span>Ngày</span></div>
+      <div class="cd"><b id="cd-h">00</b><span>Giờ</span></div>
+      <div class="cd"><b id="cd-m">00</b><span>Phút</span></div>
+      <div class="cd"><b id="cd-s">00</b><span>Giây</span></div>
+    </div>
+    <div class="hero-photo reveal"><img src="images/p3.webp" alt="Ảnh cưới Thắm và Thành" decoding="async"></div>
+  </section>
+
+  <!-- Families -->
+  <section class="families bg-red">
+    <img class="doves fam-doves reveal" src="images/doves.webp" alt="">
+    <p class="intro reveal">Hai trái tim, một hành trình!<br>Trân trọng kính mời quý khách đến chung vui cùng gia đình.</p>
+    <div class="bigname reveal">Nguyễn Thị Thắm</div>
+    <img class="rings reveal" src="images/rings.webp" alt="">
+    <div class="bigname reveal">Lê Kim Thành</div>
+    <div class="fam2 reveal">
+      <div class="col">
+        <h3>Nhà gái</h3>
+        <div class="info">
+          <p><span class="lbl">Bố</span> <b>Nguyễn Đắc Phi</b></p>
+          <p><span class="lbl">Mẹ</span> <b>Nguyễn Thị Tĩnh</b></p>
+          <p class="addr2">Yên Lâm, Xã Hát Môn, TP Hà Nội</p>
+        </div>
+        <div class="chibi-slot"><img class="b" src="images/chibi2-bride.webp" alt="Cô dâu chibi"></div>
+      </div>
+      <div class="col">
+        <h3>Nhà trai</h3>
+        <div class="info">
+          <p class="ghost" aria-hidden="true">&nbsp;</p>
+          <p><span class="lbl">Mẹ</span> <b>Trần Thị Thủy</b></p>
+          <p class="addr2">Cẩm Đình, Xã Phúc Lộc, TP Hà Nội</p>
+        </div>
+        <div class="chibi-slot"><img class="g" src="images/chibi2-groom.webp" alt="Chú rể chibi"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Events -->
+  <section class="events bg-cream">
+    <h2 class="title reveal">Sự kiện cưới</h2>
+    <p class="hint reveal">(Chạm vào thiệp để lật)</p>
+    <div class="eflip reveal" role="button" aria-label="Tiệc cưới – chạm để lật">
+      <div class="eflip-inner">
+        <div class="eface efront"><img src="images/ev-party-front.webp" alt="Tiệc cưới"></div>
+        <div class="eface eback"><img src="images/ev-party-back.webp" alt="Thông tin Tiệc cưới">
+          <a class="maplink addr-link" href="https://maps.app.goo.gl/X9m8cc7JGnyfsn8XA" target="_blank" rel="noopener" aria-label="Mở Google Maps nhà cô dâu"></a>
+        </div>
+      </div>
+    </div>
+    <div class="eflip reveal" role="button" aria-label="Lễ thành hôn – chạm để lật">
+      <div class="eflip-inner">
+        <div class="eface efront"><img src="images/ev-cere-front.webp" alt="Lễ thành hôn"></div>
+        <div class="eface eback"><img src="images/ev-cere-back.webp" alt="Thông tin Lễ thành hôn">
+          <a class="maplink" href="https://maps.app.goo.gl/X9m8cc7JGnyfsn8XA" target="_blank" rel="noopener" aria-label="Mở Google Maps nhà cô dâu"></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Album -->
+  <section class="album bg-red">
+    <h2 class="title reveal">Album ảnh</h2>
+    <div class="divider reveal">❦</div>
+    <div class="album-frame reveal" id="album">
+      <div class="slides" id="slides">
+        <div class="slide"><img src="images/a1.webp" alt="Ảnh cưới 1" decoding="async"></div>
+        <div class="slide"><img src="images/a2.webp" alt="Ảnh cưới 2" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a3.webp" alt="Ảnh cưới 3" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a4.webp" alt="Ảnh cưới 4" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a5.webp" alt="Ảnh cưới 5" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a6.webp" alt="Ảnh cưới 6" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a7.webp" alt="Ảnh cưới 7" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a8.webp" alt="Ảnh cưới 8" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a9.webp" alt="Ảnh cưới 9" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a10.webp" alt="Ảnh cưới 10" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a11.webp" alt="Ảnh cưới 11" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a12.webp" alt="Ảnh cưới 12" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a13.webp" alt="Ảnh cưới 13" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a14.webp" alt="Ảnh cưới 14" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a15.webp" alt="Ảnh cưới 15" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a16.webp" alt="Ảnh cưới 16" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a17.webp" alt="Ảnh cưới 17" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a18.webp" alt="Ảnh cưới 18" loading="lazy" decoding="async"></div>
+        <div class="slide"><img src="images/a19.webp" alt="Ảnh cưới 19" loading="lazy" decoding="async"></div>
+      </div>
+      <button type="button" class="nav prev" id="aprev" aria-label="Ảnh trước">‹</button>
+      <button type="button" class="nav next" id="anext" aria-label="Ảnh tiếp theo">›</button>
+      <button type="button" class="zoom" id="azoom" aria-label="Phóng to ảnh">+</button>
+      <div class="count-badge" id="acount">1 / 19</div>
+    </div>
+    <div class="dots reveal" id="adots"></div>
+    <p class="sub reveal album-hint">Vuốt sang để xem ảnh tiếp theo</p>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp bg-cream">
+    <h2 class="title reveal">Xác nhận tham dự</h2>
+    <div class="divider reveal">❦</div>
+    <form class="form reveal" id="rsvp" novalidate>
+      <label class="q" for="name">Tên của bạn</label>
+      <input type="text" id="name" maxlength="40" placeholder="Nhập tên của bạn">
+      <label class="q">Bạn sẽ đến chung vui chứ?</label>
+      <div class="chips" data-group="attend">
+        <div class="chip" data-v="Mình sẽ đến">Mình sẽ đến 🎉</div>
+        <div class="chip" data-v="Tiếc quá mình không đến được">Tiếc quá mình không đến được 😢</div>
+      </div>
+      <label class="q">Số người tham dự</label>
+      <div class="chips" data-group="people">
+        <div class="chip" data-v="1 người">1 người</div>
+        <div class="chip" data-v="2 người">2 người</div>
+        <div class="chip" data-v="3 người trở lên">3 người trở lên</div>
+      </div>
+      <label class="q" for="msg">Lời chúc</label>
+      <textarea id="msg" maxlength="50" placeholder="Gửi lời chúc đến cô dâu chú rể..."></textarea>
+      <div class="count"><span id="msgc">0</span>/50</div>
+      <div class="err" id="err"></div>
+      <button class="btn" type="submit" id="rsend">Gửi xác nhận</button>
+    </form>
+    <div class="wall" id="wall" aria-live="polite">
+      <p class="wall-empty" id="wallEmpty">Hãy là người đầu tiên gửi lời chúc nhé 💌</p>
+    </div>
+  </section>
+
+  <!-- Gift + Thank you (one page) -->
+  <section class="gift bg-red">
+    <h2 class="title reveal">Hộp mừng cưới</h2>
+    <div class="divider reveal">❦</div>
+    <p class="sub reveal">Chạm vào hộp quà để mở</p>
+    <div class="giftbox reveal" id="giftbox" role="button" aria-label="Mở hộp quà">
+      <div class="box"></div><div class="ribv"></div><div class="lid"></div><div class="bow"></div>
+    </div>
+
+    <div class="thanks-block">
+      <div class="thanks reveal">Thank you</div>
+      <p class="reveal">Cảm ơn bạn đã là một phần trong ngày vui của chúng mình</p>
+      <div class="sign reveal">Thắm &amp; Thành</div>
+      <div class="chibi-row reveal"><img src="images/chibi2-bride.webp" alt=""><img src="images/chibi2-groom.webp" alt=""></div>
+    </div>
+
+    <div class="gift-pop" id="giftpanel" role="dialog" aria-label="Mã QR mừng cưới">
+      <div class="gift-pop-card">
+        <button type="button" class="gift-close" id="giftclose" aria-label="Đóng">×</button>
+        <h6 class="pop-title">Gửi quà mừng cưới</h6>
+        <div class="qr-tabs" role="tablist">
+          <button type="button" class="qr-tab on" data-i="0">Chú rể</button>
+          <button type="button" class="qr-tab" data-i="1">Cô dâu</button>
+        </div>
+        <div class="qr-view">
+          <img class="qr-img on" src="images/qr-groom.webp" alt="Mã QR chuyển khoản của chú rể Lê Kim Thành">
+          <img class="qr-img" src="images/qr-bride.webp" alt="Mã QR chuyển khoản của cô dâu Nguyễn Thị Thắm">
+        </div>
+        <div class="acct">
+          <div><span class="acct-name" id="acctName">LE KIM THANH</span><br><span class="acct-no" id="acctNo">8300136412003</span></div>
+          <button type="button" class="copy-acct" id="copyAcct">Sao chép STK</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div class="lightbox" id="lb"><button type="button" class="lb-close" aria-label="Đóng">×</button><button type="button" class="lb-nav lb-prev" aria-label="Ảnh trước">‹</button><img alt=""><button type="button" class="lb-nav lb-next" aria-label="Ảnh tiếp theo">›</button></div>
+
+<button type="button" id="musicBtn" class="music-btn" aria-label="Bật/tắt nhạc"><span>Nhạc</span></button>
+<audio id="bgm" src="images/music.mp3" loop preload="none"></audio>
+<script src="config.js"></script>
+<div id="leaves" aria-hidden="true"></div>
+
+<script>
+  // Falling leaves
+  (function(){
+    const box=document.getElementById('leaves');
+    const colors=[['#c9a25a','#a8823d'],['#e2b866','#b98f45'],['#8fae6b','#6d8c4d'],['#d98a6a','#b5654a'],['#b9cf8f','#93ab69']];
+    const n=window.innerWidth<600?5:7;
+    for(let i=0;i<n;i++){
+      const [c,v]=colors[i%colors.length];
+      const s=14+Math.random()*16;
+      const el=document.createElement('div');
+      el.className='leaf';
+      el.style.left=(Math.random()*100)+'vw';
+      el.style.width=s+'px';el.style.height=s+'px';
+      el.style.opacity=(.55+Math.random()*.4).toFixed(2);
+      el.style.setProperty('--drift',((Math.random()*2-1)*120).toFixed(0)+'px');
+      el.style.animationDuration=(9+Math.random()*9).toFixed(1)+'s';
+      el.style.animationDelay=(-Math.random()*18).toFixed(1)+'s';
+      el.innerHTML='<svg viewBox="0 0 40 40" style="animation-duration:'+(2+Math.random()*2.5).toFixed(1)+'s"><path d="M20 2 C32 10 36 24 20 38 C4 24 8 10 20 2 Z" fill="'+c+'"/><path d="M20 4 L20 37 M20 14 L27 10 M20 22 L29 17 M20 14 L13 10 M20 22 L11 17" stroke="'+v+'" stroke-width="1.4" fill="none" stroke-linecap="round"/></svg>';
+      box.appendChild(el);
+    }
+  })();
+
+  // Cover
+  const cover=document.getElementById('cover'),art=document.getElementById('coverArt');
+  // full-screen cover: place the tap text where it sits in the artwork (object-fit:cover maths)
+  function sizeCover(){
+    const W=art.clientWidth,H=art.clientHeight,IW=2576,IH=1438,k=Math.max(W/IW,H/IH);
+    const ox=(W-IW*k)/2,oy=(H-IH*k)/2,tt=art.querySelector('.tap-text');
+    tt.style.left=(ox+1270*k)+'px';tt.style.top=(oy+366*k)+'px';
+    art.style.setProperty('--fs',Math.max(13,Math.min(30,30*k))+'px');
+  }
+  sizeCover();addEventListener('resize',sizeCover);
+  function burst(x,y){
+    const items=['❤','💛','✦','❀','♥','✧'];const cols=['#e86a7a','#f4b942','#ffd36b','#f29bb2','#d94b5c','#fff2b0'];
+    for(let k=0;k<34;k++){
+      const b=document.createElement('span');b.className='burst';b.textContent=items[k%items.length];b.style.color=cols[k%cols.length];
+      b.style.left=x+'px';b.style.top=y+'px';b.style.fontSize=(12+Math.random()*16)+'px';document.body.appendChild(b);
+      const a=Math.random()*Math.PI*2,r=90+Math.random()*220;
+      b.animate([{transform:'translate(-50%,-50%) scale(.2)',opacity:1},{transform:`translate(calc(-50% + ${Math.cos(a)*r}px),calc(-50% + ${Math.sin(a)*r+60}px)) scale(1) rotate(${(Math.random()*2-1)*180}deg)`,opacity:0}],
+        {duration:1100+Math.random()*700,easing:'cubic-bezier(.2,.7,.3,1)'}).onfinish=()=>b.remove();
+    }
+  }
+  let opened=false;
+  cover.addEventListener('click',e=>{
+    if(opened)return;opened=true;
+    burst(e.clientX||innerWidth/2,e.clientY||innerHeight/2);
+    cover.classList.add('gone');document.body.style.overflow='';
+  });
+  document.body.style.overflow='hidden';
+
+  // Countdown to 12:30 28/11/2026 (Vietnam time, UTC+7)
+  const target=new Date('2026-11-28T12:30:00+07:00').getTime();
+  const pad=n=>String(n).padStart(2,'0');
+  function tick(){
+    let d=Math.max(0,target-Date.now());
+    const D=Math.floor(d/864e5);d%=864e5;
+    const H=Math.floor(d/36e5);d%=36e5;
+    const M=Math.floor(d/6e4);d%=6e4;
+    const S=Math.floor(d/1e3);
+    document.getElementById('cd-d').textContent=pad(D);
+    document.getElementById('cd-h').textContent=pad(H);
+    document.getElementById('cd-m').textContent=pad(M);
+    document.getElementById('cd-s').textContent=pad(S);
+  }
+  tick();setInterval(tick,1000);
+
+  // Reveal on scroll
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // Flip cards
+  document.querySelectorAll('.flip').forEach(f=>f.addEventListener('click',e=>{if(e.target.closest('a'))return;f.classList.toggle('on');}));
+
+  // Album carousel + lightbox
+  const slides=document.getElementById('slides'),simgs=[...slides.querySelectorAll('img')],N=simgs.length;
+  const dots=document.getElementById('adots'),acount=document.getElementById('acount');
+  simgs.forEach((_,i)=>{const d=document.createElement('button');d.type='button';d.setAttribute('aria-label','Ảnh '+(i+1));d.onclick=()=>go(i);dots.appendChild(d);});
+  let cur=0;
+  function go(i){i=(i+N)%N;slides.scrollTo({left:i*slides.clientWidth,behavior:'smooth'});}
+  function mark(){cur=Math.round(slides.scrollLeft/slides.clientWidth);[...dots.children].forEach((d,k)=>d.classList.toggle('on',k===cur));acount.textContent=(cur+1)+' / '+N;}
+  slides.addEventListener('scroll',()=>requestAnimationFrame(mark),{passive:true});mark();
+  document.getElementById('aprev').onclick=()=>go(cur-1);
+  document.getElementById('anext').onclick=()=>go(cur+1);
+  const lb=document.getElementById('lb'),lbi=lb.querySelector('img');let li=0;
+  function show(i){li=(i+N)%N;lbi.src=simgs[li].src;}
+  function openLb(){show(cur);lb.classList.add('on');}
+  document.getElementById('azoom').onclick=openLb;
+  simgs.forEach(im=>im.addEventListener('click',openLb));
+  lb.querySelector('.lb-prev').onclick=e=>{e.stopPropagation();show(li-1);};
+  lb.querySelector('.lb-next').onclick=e=>{e.stopPropagation();show(li+1);};
+  lbi.addEventListener('click',e=>e.stopPropagation());
+  lb.addEventListener('click',()=>{lb.classList.remove('on');go(li);});
+  let tx=null;lb.addEventListener('touchstart',e=>{tx=e.touches[0].clientX;},{passive:true});
+  lb.addEventListener('touchend',e=>{if(tx===null)return;const dx=e.changedTouches[0].clientX-tx;if(Math.abs(dx)>40)show(li+(dx<0?1:-1));tx=null;});
+
+  // RSVP (old form) + wishes wall
+  const WISH_API = (window.WISH_API || 'https://script.google.com/macros/s/AKfycbzyvDUtRk2D4IEwJbOev3dJhIYFdMNocd6yrXsdeaN1_nd7mdK17SPpdcaISNYhyp5L2A/exec').trim();
+  const wall=document.getElementById('wall'),wallEmpty=document.getElementById('wallEmpty');
+  const sel={};
+  document.querySelectorAll('.chips').forEach(g=>g.addEventListener('click',e=>{
+    const c=e.target.closest('.chip');if(!c)return;
+    g.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel'));c.classList.add('sel');sel[g.dataset.group]=c.dataset.v;
+  }));
+  const msg=document.getElementById('msg');
+  msg.addEventListener('input',()=>document.getElementById('msgc').textContent=msg.value.length);
+  const NOTE_COLORS=['#fdeeb0','#fde0cf','#e3e9f7','#fbe0ee','#e4f1d9','#fff3c4'];
+  const DECO=['✿','♡','☆','❀','✧','♥'];
+  const seen=new Set();
+  function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+  function addNote(w,top){
+    const key=String(w.name||'').trim()+'|'+String(w.msg||'').trim();if(seen.has(key)||!w.msg)return;seen.add(key);
+    wallEmpty.style.display='none';
+    const h=[...key].reduce((a,c)=>(a*31+c.charCodeAt(0))>>>0,7);
+    const n=document.createElement('div');n.className='note';
+    n.style.background=NOTE_COLORS[h%NOTE_COLORS.length];n.style.setProperty('--rot',((h%7)-3)*0.6+'deg');
+    n.innerHTML='<span class="deco">'+DECO[h%DECO.length]+'</span><p>'+esc(w.msg)+'</p><span class="by">– '+esc(w.name||'Khách mời')+'</span>';
+    if(top){wall.insertBefore(n,wall.firstChild);n.classList.add('pop');}else wall.appendChild(n);
+  }
+  let backend=null;
+  (async()=>{
+    if(WISH_API){
+      backend={
+        async list(){const r=await fetch(WISH_API+'?action=list');const j=await r.json();return j.wishes||[];},
+        async add(w){const r=await fetch(WISH_API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify(w)});if(!r.ok)throw new Error('send');}
+      };
+      try{(await backend.list()).forEach(w=>addNote(w,false));}catch(_){}
+      setInterval(async()=>{try{(await backend.list()).slice(0,20).reverse().forEach(w=>addNote(w,true));}catch(_){}} ,30000);
+      return;
+    }
+    try{
+      if(!window.claude||!claude.use)return;
+      const db=await claude.use('db');if(!db)return;
+      const col=db.collection('wishes');
+      backend={async add(w){await col.doc('w'+Date.now()+Math.random().toString(36).slice(2,6)).set(w);}};
+      col.orderBy('ts','desc').limit(60).onSnapshot(snap=>{
+        const docs=(snap.docs||snap).map(d=>Object.assign({id:d.id},d.data?d.data():d));
+        docs.slice().reverse().forEach(w=>addNote(w,true));
+      });
+    }catch(_){}
+  })();
+  document.getElementById('rsvp').addEventListener('submit',async e=>{
+    e.preventDefault();
+    const name=document.getElementById('name').value.trim(),err=document.getElementById('err'),btn=document.getElementById('rsend');
+    if(!name){err.textContent='Bạn nhập tên giúp mình nhé.';return;}
+    if(!sel.attend){err.textContent='Bạn chọn có đến được không nhé.';return;}
+    err.textContent='';
+    const w={name,attend:sel.attend,people:sel.attend==='Mình sẽ đến'?(sel.people||'1 người'):'',msg:msg.value.trim(),ts:Date.now()};
+    btn.disabled=true;btn.textContent='Đang gửi...';
+    let ok=true;
+    if(backend){try{await backend.add(w);}catch(_){ok=false;}}
+    btn.disabled=false;
+    if(ok){
+      if(w.msg)addNote({name:w.name,msg:w.msg},true);
+      btn.textContent='Đã gửi, cảm ơn bạn ♥';e.target.reset();msg.value='';document.getElementById('msgc').textContent='0';
+      document.querySelectorAll('.chip').forEach(x=>x.classList.remove('sel'));delete sel.attend;delete sel.people;
+      setTimeout(()=>btn.textContent='Gửi xác nhận',3000);
+    }else{btn.textContent='Gửi xác nhận';err.textContent='Chưa gửi được, bạn thử lại giúp mình nhé.';}
+  });
+
+  // Gift
+  const gb=document.getElementById('giftbox');
+  const gp=document.getElementById('giftpanel');
+  const lv=document.getElementById('leaves');
+  gb.addEventListener('click',()=>{gb.classList.add('open');setTimeout(()=>{gp.classList.add('on');lv.style.opacity='0';},450);});
+  document.getElementById('giftclose').addEventListener('click',e=>{e.stopPropagation();gp.classList.remove('on');gb.classList.remove('open');lv.style.opacity='';});
+  gp.addEventListener('click',e=>{if(e.target===gp){gp.classList.remove('on');gb.classList.remove('open');lv.style.opacity='';}});
+  // QR tabs + copy account number
+  const accts=[['LE KIM THANH','8300136412003'],['NGUYEN THI THAM','0396897694']];
+  document.querySelectorAll('.qr-tab').forEach(b=>b.addEventListener('click',e=>{
+    e.stopPropagation();const i=+b.dataset.i;
+    document.querySelectorAll('.qr-tab').forEach((x,k)=>x.classList.toggle('on',k===i));
+    document.querySelectorAll('.qr-img').forEach((x,k)=>x.classList.toggle('on',k===i));
+    document.getElementById('acctName').textContent=accts[i][0];document.getElementById('acctNo').textContent=accts[i][1];
+    document.getElementById('copyAcct').textContent='Sao chép STK';
+  }));
+  document.getElementById('copyAcct').addEventListener('click',async e=>{
+    e.stopPropagation();const b=e.currentTarget;
+    try{await navigator.clipboard.writeText(document.getElementById('acctNo').textContent);b.textContent='Đã sao chép ✓';}
+    catch(_){b.textContent='Hãy chép thủ công';}
+  });
+  // event flip cards
+  document.querySelectorAll('.eflip').forEach(f=>{let deg=0;const inner=f.querySelector('.eflip-inner');f.addEventListener('click',e=>{if(e.target.closest('a'))return;deg+=180;inner.style.transform='rotateY('+deg+'deg)';f.classList.toggle('on',(deg/180)%2===1);});});
+  // Background music
+  const bgm=document.getElementById('bgm'),mb=document.getElementById('musicBtn');
+  function playM(){const p=bgm.play();if(p&&p.then)p.then(()=>mb.classList.add('playing')).catch(()=>mb.classList.remove('playing'));else mb.classList.add('playing');}
+  function stopM(){bgm.pause();mb.classList.remove('playing');}
+  mb.addEventListener('click',e=>{e.stopPropagation();bgm.paused?playM():stopM();});
+  bgm.addEventListener('pause',()=>mb.classList.remove('playing'));
+  bgm.addEventListener('play',()=>mb.classList.add('playing'));
+  document.getElementById('cover').addEventListener('click',()=>{mb.classList.add('show');playM();},{once:true});
+</script>
+</body>
+</html>
